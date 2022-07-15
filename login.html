@@ -21,7 +21,7 @@
                    Don't have an account?
                 </span>
                 <span class="ms-lg-4 ms-2 d-block">
-                  <a class="btn btn-outline-primary px-4 rounded-pill" href="./signUp.html">Sign Up</a>
+                  <a class="btn btn-outline-primary px-4 rounded-pill" href="./sign-up.html">Sign Up</a>
                 </span>
               </div>
             </div>
@@ -36,32 +36,38 @@
                  </div>
                  <form action="" id="signInForm" class="">
                       <div class="text-secondary">
-                        <label for="username" class="form-label fs-5">Username</label>
-                        <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="username" required>
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
                         <span class="username-error error-area text-danger">Please enter your username</span>
                       </div>
                       <div class="mb-1">
-                        <label for="password" class="form-label text-secondary fs-5">Password</label>
+                        <label for="password" class="form-label text-secondary">Password</label>
                         <div class="input-group">
-                            <input type="password" class="form-control form-control-lg border-end-0 passwordToggleItem" id="password" name="password" placeholder="********" required>
+                            <input type="password" class="form-control border-end-0 passwordToggleItem" id="password" name="password" placeholder="********" required>
                             <span class="input-group-text bg-white ">
-                              <i class="fa fa-eye view-password-text fs-2" aria-hidden="true"></i>
+                              <i class="fa fa-eye view-password-text" aria-hidden="true"></i>
                             </span>
                         </div>
                         <span class="password-error error-area text-danger">Please enter your password</span>
                     </div>
-                   <div class="mb-5 d-flex justify-content-between align-items-center">
-                     <div class="form-check align-items-center d-flex">
+                   <div class="mb-3 row">
+                     <div class="col-lg-6 col-md-6">
+                      <div class="form-check d-flex align-items-center">
                         <input class="form-check-input" type="checkbox" id="keep-logged-in">
-                        <label class="form-check-label fs-5 ms-2" for="keep-logged-in">
+                        <label class="form-check-label ms-2" for="keep-logged-in">
                           Keep me logged in
                         </label>
                      </div> 
-                     <div class="">
-                         <a href="./forgotPassword.html" class="text-decoration-none fs-5">Forgot password?</a>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                      <div class="d-flex justify-content-end">
+                        <a href="./forgot-password.html" class="text-decoration-none">Forgot password?</a>
+                    </div>
                      </div>
                    </div>   
-                    <button type="submit" class="btn btn-danger w-100 btn-lg">Sign in</button>            
+                    <div class="text-center m-auto" id="sign-up" >
+                      <button type="submit" class="btn btn-danger w-100 btn-lg">Sign in</button>
+                    </div>            
                  </form>
             </div>
         </section>

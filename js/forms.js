@@ -21,7 +21,7 @@ let emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 //Sign Up form section
 const signUpForm = document.getElementById('signUpForm')
-if(window.location.href.includes(`signUp.html`)) {
+if(window.location.href.includes(`sign-up.html`)) {
   signUpForm.addEventListener('submit', validate)   
 }
 
@@ -140,7 +140,7 @@ function login(e) {
 //Forgotten password
 
 let forgotPasswordForm = document.getElementById('forgotPasswordForm')
-if(window.location.href.includes(`forgotPassword.html`)) {
+if(window.location.href.includes(`forgot-password.html`)) {
     forgotPasswordForm.addEventListener('submit', forgotPassword)   
 }
 
@@ -155,7 +155,7 @@ function forgotPassword(e) {
     let forgotPasswordUser = usersDB.filter(users => users.email === userEmailAddress)
     if(forgotPasswordUser.length !== 0 ) {
         localStorage.setItem("forgotPasswordUser", JSON.stringify(forgotPasswordUser))
-        window.location.href = `resetPassword.html`
+        window.location.href = `reset-password.html`
     } else {
         emailError.style.visibility = 'visible'
         forgotPasswordForm.email.style.border =  "1px solid #ED1C24"
@@ -164,7 +164,7 @@ function forgotPassword(e) {
 
 //Reset password
 let resetPasswordForm = document.getElementById('resetPasswordForm')
-if(window.location.href.includes(`resetPassword.html`)) {
+if(window.location.href.includes(`reset-password.html`)) {
     resetPasswordForm.addEventListener('submit', resetPassword)   
 }
 
@@ -193,7 +193,7 @@ function resetPassword(e) {
           
             localStorage.setItem('dataBase', JSON.stringify(usersDB))
             localStorage.setItem("forgotPasswordUser", JSON.stringify(forgotPasswordUser))
-            window.location.href=`recoverPassword.html`
+            window.location.href=`recover-password.html`
         }
      })
    }
@@ -201,7 +201,7 @@ function resetPassword(e) {
 
 //Recovered password login
 let recoverPasswordForm = document.getElementById('recoverPasswordForm')
-if(window.location.href.includes(`recoverPassword.html`)) {
+if(window.location.href.includes(`recover-password.html`)) {
     recoverPasswordForm.addEventListener('submit', recoverPassword)   
 
     let forgotPasswordUser = JSON.parse(localStorage.getItem('forgotPasswordUser'))
