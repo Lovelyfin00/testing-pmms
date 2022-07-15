@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <!-- Link google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard-nav.css">
+    <link rel="stylesheet" href="css/dashboard-stats.css">
+    <link rel="stylesheet" href="css/generator.css">
+
+    <!-- Adding bootsrtap icon and fontawesome icon -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+   <script src="https://kit.fontawesome.com/d972efdfc6.js" crossorigin="anonymous"></script>
+
+    <title>Generator</title>
+</head>
+<body>
+    <!-- Navbar and sidebar start -->
+   <div class="container-fluid" id="navHeader" style="padding: 0;">
+    <nav class="navbar p-4 navbar-expand-lg navbar-light align-content-center" style="background-color: #51A4F1;">
+       <button class="btn btn-primary me-lg-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-list"></i></button>
+       <form class="d-flex ms-2" role="search" style="width:50%">
+          <div class="search-bar">
+             <i class="bi bi-search"></i>
+             <input class="form-control text-light input-field" type="search" placeholder="Search data" aria-label="Search" style="background-color: #51A4F1;">
+          </div>                    
+       </form>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse justify-content-end pe-3" id="navbarSupportedContent">
+          <div class="navbar-nav align-items-center" >
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-center" >
+                   <li class="nav-item">
+                      <a class="nav-link position-relative"  href="#"> <img src="./img/navMessage.png">
+                         <span class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger">
+                            8
+                            <span class="visually-hidden">unread messages</span>
+                         </span>
+                      </a>
+                   </li>
+
+                   <li class="nav-item">
+                      <a class="nav-link" href="#"><img src="./img/navNotify.png"></a>
+                   </li>
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="./img/admin-img.png" class="me-2">
+                      <p class="mb-0 me-3 text-light">Admin</p>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                         <li><a class="dropdown-item" href="#">Log out</a></li>
+                      </ul>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </div>  
+    </nav>
+ </div>
+ <!-- Navbar end -->
+
+ <!-- Sidebar start -->
+ <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">   
+    <div class="offcanvas-header">
+       <h5 class="offcanvas-title text-center" id="offcanvasScrollingLabel"> 
+          <img src="./img/dashHeliumLogo.png" class="w-100">
+       </h5>
+       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+       <div id="sidebar">      
+          <div class="mt-5">
+             <h6>MAIN-MENU</h6>
+             <div class="dashContent ">                  
+                <div class=" dashBoard d-flex align-items-center">                       
+                   <img src="./img/dashboard.png" class="me-3">                           
+                   <a href="#" class="ms-2 mb-0 ">Dashboard</a>
+                </div>
+                <br>
+                <div class="sidenav">
+                   <button class="dropdown-btn d-flex align-items-center" >
+                      <img src="./img/dashRealTimeInfo.png" class="me-3">
+                   <a href="#" class="me-4 RealTimeNoHover"> Real Time Info </a>
+                      <i class="bi bi-caret-down-fill"></i>
+                   </button>
+                   <div class="dropdown-container">
+                      <a href="#" class="mb-4 mt-2">Generators</a>
+                      <a href="#" class="mb-4 mt-2">Measurement</a>
+                      <a href="#" class="mb-4">Wave Form</a>
+                      <a href="#" class="mb-4">Analytics</a>
+                      <a href="#" class="mb-4">Alarm</a>
+                      <a href="#" class="mb-4">Map</a>
+                   </div>
+                </div>
+                <br>
+                <div class=" notifications d-flex align-items-center mt-5 mb-2">
+                   <a href="#" class="position-relative"> <img src="./img/dashNotification.png" class="me-3 ms-0">   
+                      <span class="position-absolute top-0 start-0 translate-middle p-2 bg-danger border border-light rounded-circle">
+                         <span class="visually-hidden">New alerts</span>
+                       </span>                        
+                      Notifications
+                   </a>
+                </div>
+             </div>
+             <br>
+             <br>
+             <h6>PREFERENCES</h6>
+             <div class="dashContent">
+                <div class=" dashUser mb-2 mt-2 d-flex align-items-center">
+                   <img src="./img/dashUser.png" class="me-3">
+                   <a href="#">User</a>
+                </div>
+                <br>
+                <div class=" dashSetting d-flex align-items-center pb-5">
+                   <img src="./img/dashSetting.png" class="me-2">
+                   <a href="#">Settings</a>
+                </div>
+             </div>
+          </div>             
+       </div>
+    </div>
+ </div>
+ <!-- Sidebar End -->
+ 
+ <!-- Dashboard status start -->
+  <section id="status" >
+      <div class="container">
+          <h5 class="icon-color mt-3 mb-4"><a href="./dashboard.html" class="text-decoration-none text-black">Dashboard/</a>Real Time Info/<a href="./generator.html" class="text-decoration-none text-black">Generator</a></h5>
+          <div class="row">
+              <div class="col-lg-7 mt-3 mb-3">
+                  <div class="card shadow rounded">
+                      <div class="card-body">
+                          <div class="row d-flex align-items-center text-center">
+                              <div class="col-lg-3 col-md-3 border-end border-2">
+                                  <div class="gen-stat d-flex align-items-center justify-content-center">
+                                      <div class="d-flex align-items-center">
+                                          <img src="img/electric-generator(2) 1.png">
+                                      </div>
+                                      <p class="fw-bolder ps-2 mt-0 mb-0 icon-color">KH Generator Status</p>
+                                  </div>
+                              </div>
+                              <div class="col-lg-2 col-md-2 border-end border-2">
+                                  <p class="petrol-color">Petrol</p>
+                              </div>
+                              <div class="col-lg-2 col-md-2 border-end border-2">
+                                  <p class="online-color">Online</p>
+                              </div>
+                              <div class="col-lg-2 col-md-2 border-end border-2">
+                                  <p class="offline-color">Offline</p>
+                              </div>
+                              <div class="col-lg-3 col-md-2">
+                                  <p class=""><i class="fa-solid fa-triangle-exclamation pe-2 alarm-color"></i>Alarms<span class="ps-3 fw-bold icon-color">3</span></p>
+                              </div>
+                          </div>                                              
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-5 mt-3 mb-3">
+                  <div class="card shadow rounded">
+                      <div class="card-body temp-bgcolor rounded text-white">
+                          <div class="weather-content">
+                              <div class="row d-flex align-items-center">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center">
+                                      <div class="weather d-flex">
+                                          <img src="img/weather-app 1.png" alt="" class="img-fluid">
+                                      </div>
+                                      <div class="date-div ps-3">
+                                          <p id="date-name" class="mb-0"></p>
+                                          <p id="date-format" class="mb-0"></p>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-6 ps-3">
+                                      <p class="mt-0 mb-0 fw-bolder fs-2">15<sup>o</sup>C</p>
+                                      <p class="mt-o mb-0"><sub>Nigeria</sub></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Dashboard status End -->
+
+
+    <section id="machines-overview">
+        <section class="petrol-generators-overview" class="d-flex align-items-center">
+            <div class="container pb-5 pt-2">
+                <div class="modal-section d-flex justify-content-between align-items-center mt-3 mb-3">
+                    <div class=" info pt-3 mb-3"><h4>Petrol Generators</h4></div>
+                    <div class="mb-4">
+                        <button type="button" class="btn bg-white first-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Add New Petrol Generator
+                        </button>
+
+                <!-- Modal starts-->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title m-auto text-center" id="exampleModalLabel">Add Generator</h5>
+                                <button type="button" id="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <form id="petrolForm">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput1" class="form-label">Gen Name</label>
+                                                <input type="text" class="form-control" id="petrolGen-name" placeholder="Sumex Generator">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput2" class="form-label">Gen ID</label>
+                                                <input type="text" class="form-control" id="petrolGen-id" placeholder="101">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput3" class="form-label">Model No</label>
+                                                <input type="text" class="form-control" id="petrolGen-model" placeholder="Sv 18000 CXS">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="petrolGen-size" class="form-label">Size</label>
+                                            <select id="petrolGen-size" class="form-select">
+                                            <option selected disabled>Select size</option>
+                                            <option value="1">Small</option>
+                                            <option value="2">Medium</option>
+                                            <option value="3">Large</option>
+                                            <option value="4">Extra Large</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput4" class="form-label">Gen Type</label>
+                                                <input type="text" class="form-control" id="petrolGen-type" placeholder="Lister Gen">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput4" class="form-label">Output Voltage</label>
+                                                <input type="text" class="form-control" id="petrolGen-power" placeholder="220-240V">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="inputState" class="form-label">Location</label>
+                                            <select id="selectState" class="form-select">
+                                            <option selected disabled>Select location</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="inputAddress2" class="form-label">Area</label>
+                                            <input type="text" class="form-control" id="petrolGen-add" placeholder="38 Afaha Uqua Road, Eket">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="petrolGen-kva" class="form-label">Max Running KVA</label>
+                                            <input type="text" class="form-control" id="petrolGen-kva" placeholder="7.0KVA">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-style" class="form-label">Style</label>
+                                            <input type="text" class="form-control" id="petrolGen-style" placeholder="Modern">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-color" class="form-label">Color</label>
+                                            <input type="text" class="form-control" id="petrolGen-color" placeholder="Yellow">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-ignition" class="form-label">Rated Ignition System</label>
+                                            <input type="text" class="form-control" id="petrolGen-ignition" placeholder="Transistor">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="inputState" class="form-label">Production Country</label>
+                                            <select id="selectCountry" class="form-select">
+                                            <option selected disabled>Select country</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-weight" class="form-label">Weight</label>
+                                            <input type="text" class="form-control" id="petrolGen-weight" placeholder="70kg">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-freq" class="form-label">Frequency</label>
+                                            <input type="text" class="form-control" id="petrolGen-freq" placeholder="50Hz">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-tank" class="form-label">Tank Capacity</label>
+                                            <input type="text" class="form-control" id="petrolGen-tank" placeholder="25 Litres">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-Pf" class="form-label">Power Factor</label>
+                                            <input type="text" class="form-control" id="petrolGen-Pf" placeholder="1.0">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="petrolGen-limit" class="form-label">Tank Limit</label>
+                                            <input type="text" class="form-control" id="petrolGen-limit" placeholder="25 Litres">
+                                        </div>
+                                    </div> 
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-danger btn-lg mt-3 " id="add-petrol">Add Petrol Generator</button>
+                                        <p id ="success-text" class="mt-1 mb-1 text-success"></p>
+                                    </div>   
+                                </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="close-btn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends -->
+                </div>
+            </div>
+        
+            <!-- Petrol Gen sec -->
+            <div class="row" id="petrolGen-sec">
+            </div>
+        </div>
+    </section>
+
+    <!-- Diesel Gen section -->
+        <section class="petrol-generators-overview" class="d-flex align-items-center">
+            <div class="container pb-3">
+                <div class="modal-section d-flex justify-content-between align-items-center mt-3 mb-3">
+                    <div class="info pt-3 mb-3"><h4>Diesel Generators</h4></div>
+                    <div class="mb-4">
+                        <button type="button" class="btn bg-white first-button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            Add New Diesel Generator
+                        </button>
+                        
+                        <!-- Modal starts-->
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title m-auto text-center" id="exampleModalLabel">Add Generator</h5>
+                                <button type="button" id="btn-close2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <form id="dieselForm">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput1" class="form-label">Gen Name</label>
+                                                <input type="text" class="form-control" id="dieselGen-name" placeholder="KH Lister">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput2" class="form-label">Gen ID</label>
+                                                <input type="text" class="form-control" id="dieselGen-id" placeholder="101">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput3" class="form-label">Model No</label>
+                                                <input type="text" class="form-control" id="dieselGen-model" placeholder="Sv 18000 CXS">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="dieselGen-size" class="form-label">Size</label>
+                                            <select id="dieselGen-size" class="form-select">
+                                            <option selected disabled>Select size</option>
+                                            <option value="Small">Small</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="Large">Large</option>
+                                            <option value="Extra Large">Extra Large</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput4" class="form-label">Gen Type</label>
+                                                <input type="text" class="form-control" id="dieselGen-type" placeholder="Lister Gen">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formGroupExampleInput4" class="form-label">Output Voltage</label>
+                                                <input type="text" class="form-control" id="dieselGen-power" placeholder="220-240V">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="inputState" class="form-label">Location</label>
+                                            <select id="selectState2" class="form-select">
+                                            <option selected disabled>Select location</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="inputAddress2" class="form-label">Area</label>
+                                            <input type="text" class="form-control" id="dieselGen-add" placeholder="38 Afaha Uqua Road, Eket">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <label for="dieselGen-kva" class="form-label">Max Running KVA</label>
+                                            <input type="text" class="form-control" id="dieselGen-kva" placeholder="7.0KVA">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-style" class="form-label">Style</label>
+                                            <input type="text" class="form-control" id="dieselGen-style" placeholder="Modern">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-color" class="form-label">Color</label>
+                                            <input type="text" class="form-control" id="dieselGen-color" placeholder="Yellow">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-ignition" class="form-label">Rated Ignition System</label>
+                                            <input type="text" class="form-control" id="dieselGen-ignition" placeholder="Transistor">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="inputState" class="form-label">Production Country</label>
+                                            <select id="selectCountry2" class="form-select">
+                                            <option selected disabled>Select country</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-weight" class="form-label">Weight</label>
+                                            <input type="text" class="form-control" id="dieselGen-weight" placeholder="70kg">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-freq" class="form-label">Frequency</label>
+                                            <input type="text" class="form-control" id="dieselGen-freq" placeholder="50Hz">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-tank" class="form-label">Tank Capacity</label>
+                                            <input type="text" class="form-control" id="dieselGen-tank" placeholder="25 Litres">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-Pf" class="form-label">Power Factor</label>
+                                            <input type="text" class="form-control" id="dieselGen-Pf" placeholder="1.0">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-2">
+                                            <label for="dieselGen-limit" class="form-label">Tank Limit</label>
+                                            <input type="text" class="form-control" id="dieselGen-limit" placeholder="25 Litres">
+                                        </div>
+                                    </div> 
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-danger btn-lg mt-3 " id="add-diesel">Add Diesel Generator</button>
+                                        <p id ="success-text2" class="mt-1 mb-1 text-success"></p>
+                                    </div>   
+                                </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="close-btn2" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends -->
+                    </div>
+                </div>
+    
+                <!-- Diesel Gen section -->
+                <div class="row" id="dieselGen-sec">
+                    
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="js/dashboard-nav.js"></script>
+    <script src="js/dashboard-stats.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>

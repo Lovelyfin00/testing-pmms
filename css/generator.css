@@ -1,0 +1,88 @@
+:root {
+    --section-bg-color: #F5F5F5;
+    --online-color: #06C848;
+    --button-color: #F21919;
+}
+
+body{
+    background-color: var(--section-bg-color) !important;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.first-button {
+    border-radius: 10px!important;
+    border: 2px solid var(--online-color)!important;
+    color: var(--online-color)!important;
+    font-size: 0.8rem!important;
+}
+
+.first-row {
+    height: 2.3rem;
+    width: 100%;
+}
+
+.first-row-text {
+    height: 1.2rem;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.status-indicator {
+    color: var(--online-color);
+}
+
+.info {
+    font-size: 0.7rem;
+}
+
+.card-image {
+    height: 13rem;
+    width: 100%;
+}
+
+.card-image-2 {
+    height: 10rem;
+    width: 10rem;
+}
+
+.generator-specifications {
+    font-size: 0.8rem;
+}
+
+.links {
+    height: 3.5rem;
+}
+
+.links-1 {
+    font-size: 0.9rem;
+    color: var(--button-color)!important;
+}
+
+.links-2 {
+    font-size: 0.9rem!important;
+    background-color: var(--button-color)!important;
+}
+
+.divider {
+    width: 0.09rem;
+    height: 1rem;
+    background-color: black;
+}
+
+@media (max-width: 468px) {
+   .divider {
+    display: none;
+   }
+
+   .links {
+    display: flex;
+    flex-direction: column;
+   }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-dialog{
+        max-width: 70% !important;
+    }
+}
